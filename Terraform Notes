@@ -1,0 +1,157 @@
+### Waterfall
+
+* Good for legacy projects where the requirements are finalized.  
+* Customer and the development team knows how the end product would like even before the product development starts. 
+* There is almost zero chance for the requirements to change while the product is being developed. 
+* For example - automating manual electricity bill payment, etc.
+
+* Another example - Yearly appraisal.  
+** By the time the individual receives the feedback, it is too late.  
+** The employee gets very less chances to fix his mistakes as the feedback is shared pretty late. 
+** This is the typical disadvantage of the waterfall model.
+** Feedback comes pretty late damage already made
+
+### Agile relationship with DevOps
+* Fail fast
+* Frequent feedback
+* delivery the product more frequently
+* deliver a stable product more frequently
+
+### Agile Frameworks (SCRUM/Kanban, etc)
+* Daily stand-ups
+* fail fast
+ 
+### Continuous Integration (CI)
+* It is a fail-fast engineering practice like daily stand-up meeting which is a fail-fast project management practice.
+
+* Developers
+** started automating unit/integration 
+** learned qa skills
+** TDD
+
+*	QA 
+** BDD (Cucumber/Jasmine/Karma/Selenium)
+** Learned little bit of coding
+** automated function/performance/stress/load 
+
+*	System Administrators
+** Installing OS/Software/Configuration
+
+* During CI days the wall between the QA and Teams got collapsed.  Moving forward, Dev Team = Dev + QA
+
+## What is DevOps?
+* extension of CI
+* automation
+* Dev (Developers + QA) + Ops (Operations Teams)
+** Developers
+*** Application development
+*** Automate Unit/Integration Test
+*** Administrative skills
+**** docker/kubernetes
+**** terraform
+
+** QA
+*** Automating end-2-end testing
+*** They are expected to know Java/C#/Microservices/REST/SOAP
+***. Administrative skills
+**** terraform
+**** chef/puppet/ansible
+**** docker/kubernetes
+
+* Ops
+** experts in administration ( manually )
+** chef/puppet/ansible/salt
+** terraform
+** Dev skills
+*** YAML/JSON
+*** HCL (Hashicorp Configuration Language - DSL(Domain Specific Language used by Terraform )
+*** Ruby
+*** Python
+** QA skills
+*** they should how to test the environment 
+	
+* Why DevOps
+** is a combination or practice and process.
+** helps deliver more frequent deliveries to customer in a reliable way by automating end to end.
+
+* What is the problem DevOps solves?
+** identify bugs during development
+** this helps deliver reliable product more frequently
+
+* DevOps Tools
+** Git/GitHub 
+** Maven/Gradle 
+** Docker, Kubernetes(K8s)
+** Terraform, 
+** Cloudformation 
+** Openstack
+** Jenkins
+** TeamCity
+** Bamboo 
+** TFS 
+** JIRA
+
+* IAAS
+**  Infrastructure as a Service (Hardware)
+** eg: hardware, external Storage,Only hardware get as a service
+** Renting the hardware
+
+* Platform as a Service (PAAS)
+** eg: AWS - ec2 instance ( Hardware + OS )
+** Renting the Hardware + OS
+** Oracle DB Server ( You should bring this - license )
+
+* Software as Service (SAAS) - Hardware + OS + Software
+** eg: Dynamo DB, S3(Simple Storage Service), Quickbooks, VMWare Cloud (AWS), vSphere
+business email (Google GSuite, Quickbooks account software, etc )
+
+# Public IP
+* Internet facing iP
+* machine with public ip can be accessed from internet
+
+# Private IP
+* The machine with private ip are not accessible outside that network
+
+# VPC ( 10.20.0.0/16 )
+* Virtual Private Cloud ( Private Network )
+* Tied to a AWS Region ( Mumbai, North Virgina(us-east-1), etc ) 
+* VPCs can be further broken down into small networks called Subnets
+
+# Subnets ( 10.20.30.0/24)
+* a small network that resides with VPC IP Range
+* Two types
+** Private Subnet
+*** No  Internet facing, no one can access these machines from Internet
+** Public Subnet
+*** Connected to Internet Gateway
+
+# Subnet ( 10.20.31.0/24 )
+* Logical separation of bigger network (VPC) into small networks
+* The the CIDR block(IP range) chosen should be within the VPC CIDR block (IP range)
+* tied to a specific AWS availability zone in a AWS Region eg: us-east-1a 
+
+# IPV4 
+* 10.20.0.0/16 (CIDR) - This is a range of IP Address
+* 32 bits
+
+10.20.0.0
+10.20.0.1
+10.20.0.255
+10.20.1.0
+10.20.1.255
+10.20.255.255
+255 * 255 = 65535 IPs
+4 Octets ( 4 bytes )
+
+### Public / Private key pair
+* House Lock (Private key - remains in the system where the key pair was generated ) 
+* House key ( Public key - shared with trusted machines that wishes to permit this user to login via public key )
+* Generally Unix/Linux and even Windows systems use key-pairs as a secure way to authenticate a user via key-pair.  
+* Key pairs represent the user for which the key pairs were generated.
+* Ansible recommends key pairs for login authentication.
+
+### Administrator user
+* generate a key which represents Administrator user
+
+### Regular (Jegan)
+* generate a key pair that represents the regular user
